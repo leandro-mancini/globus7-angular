@@ -2,11 +2,15 @@
   "name": "globus7-angular",
   "description": "Globus 7 projeto inicial em Angular",
   "readmeFilename": "README.md",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": {
     "name": "Leandro Mancini",
     "email": "leandro.sousa@bgmrodotec.com.br",
     "homepage": "http://leandromancini.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandro-mancini/globus7-angular"
   },
   "license": "MIT",
   "scripts": {
