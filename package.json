@@ -2,12 +2,21 @@
   "name": "globus7-angular",
   "description": "Globus 7 projeto inicial em Angular",
   "readmeFilename": "README.md",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "author": {
     "name": "Leandro Mancini",
     "email": "leandro.sousa@bgmrodotec.com.br",
     "homepage": "http://leandromancini.com/"
   },
+  "keywords": [
+    "Angular 5",
+    "Angular CLI",
+    "Globus7",
+    "Material Angular",
+    "Progressive Web Apps",
+    "Service Worker Precache",
+    "Typescript"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leandro-mancini/globus7-angular"
