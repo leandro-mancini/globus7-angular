@@ -5,8 +5,9 @@
 ## Features
 
 * Angular CLI version 1.4.9.
-* Typescript ~2.3.3
-* Compilação Automática Sass
+* Typescript ~2.4.2
+* Material Angular ^5.0.0-rc.2
+* Service Worker Precache ^5.2.0
 
 ## Instalando o globus7-angular
 
