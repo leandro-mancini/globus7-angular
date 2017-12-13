@@ -20,20 +20,51 @@ npm install globus7-angular --save
 
 ## Dialog Notification
 
-``` ts
+Exemplo de notificações com `globus7-angular`.
+Primeiro faz um `import` no seu projeto e em seguida injeta no `constructor`.
+
+```shell
 import { DialogNotificationService } from './components/dialog-notification/dialog-notification.service';
 ```
 
-Alerta simples
+* Alerta simples
 
-``` ts
+```shell
 this.dialogNotification.alert('Teste', 'Mensagem de teste.');
 ```
 
-Alertas com arrays de mensagens
+* Alertas com arrays de mensagens
 
-``` ts
+```shell
 this.dialogNotification.warnings('Teste', ['Mensagem de teste 1', 'Mensagem de teste 2', 'Mensagem de teste 3']);
+```
+
+* Getting Started
+
+```shell
+import { Component, OnInit } from '@angular/core';
+import { DialogNotificationService } from './components/dialog-notification/dialog-notification.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  constructor(
+    public dialogNotification: DialogNotificationService
+  ){
+
+  }
+
+  ngOnInit() {
+    // Alerta simples
+    this.dialogNotification.alert('Teste', 'Mensagem de teste.');
+
+    // Alertas com arrays de mensagens
+    this.dialogNotification.warnings('Teste', ['Mensagem de teste 1', 'Mensagem de teste 2', 'Mensagem de teste 3']);
+  }
+}
 ```
 
 
