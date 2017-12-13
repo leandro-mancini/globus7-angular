@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogNotificationService } from './../../components/dialog-notification/dialog-notification.service';
 
 @Component({
   selector: 'app-ui-kit',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UiKitComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogNotification: DialogNotificationService
+  ) { }
 
   ngOnInit() {
+  }
+
+  public alerta(){
+    this.dialogNotification.alert('Teste', 'Mensagem de teste.');
   }
 
 }
