@@ -1,6 +1,6 @@
 import { RouterModule } from '@angular/router';
 
-import { UiKitComponent } from './ui-kit/ui-kit.component';
+import { UiKitComponent } from './pages/ui-kit/ui-kit.component';
 
 const routes = [
     {

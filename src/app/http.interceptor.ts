@@ -104,21 +104,21 @@ export class InterceptedHttp extends Http {
                 erros.push(msg);
             };
 
-            // this.dialogNotification.showMultipleWarn('Atenção', erros);
+            this.dialogNotification.warnings('Teste', erros);
             break;
         case 401:
-            // this.router.navigate(['./login/']);
+            // Faz algo 
             break;
         case 404:
-            // this.dialogNotification.showWarning('Atenção', 'O recurso requisitado não existe.');
+            this.dialogNotification.alert('Atenção', 'O recurso requisitado não existe.');
             break;
         case 406:
         case 409:
         case 500:
-            // this.dialogNotification.showError('Ocorreu um erro inesperado.');
+            this.dialogNotification.alert('Atenção', 'Ocorreu um erro inesperado.');
             break;
         default:
-            // this.dialogNotification.showError('Ocorreu um erro inesperado.');
+            this.dialogNotification.alert('Atenção', 'Ocorreu um erro inesperado.');
             break;
         }
 
