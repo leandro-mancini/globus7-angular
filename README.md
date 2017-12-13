@@ -18,6 +18,26 @@ Você pode obtê-lo em npm.
 npm install globus7-angular --save
 ```
 
+## Dialog Notification
+
+``` ts
+import { DialogNotificationService } from './components/dialog-notification/dialog-notification.service';
+```
+
+Alerta simples
+
+``` ts
+this.dialogNotification.alert('Teste', 'Mensagem de teste.');
+```
+
+Alertas com arrays de mensagens
+
+``` ts
+this.dialogNotification.warnings('Teste', ['Mensagem de teste 1', 'Mensagem de teste 2', 'Mensagem de teste 3']);
+```
+
+
+
 ## Servidor de desenvolvimento
 
 Execute `ng serve` para um servidor dev. Navegue para `http://localhost:4200/`. O aplicativo irá recarregar automaticamente se você alterar qualquer um dos arquivos de origem

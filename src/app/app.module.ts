@@ -7,19 +7,25 @@ import {
   MatButtonModule,
   MatToolbarModule,
   MatIconModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatDialogModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { httpFactory } from './http.factory';
 import { Globals } from './app.globals';
+
 import { UiKitComponent } from './ui-kit/ui-kit.component';
+
+import { DialogNotificationComponent } from './components/dialog-notification/dialog-notification.component';
+import { DialogNotificationService } from './components/dialog-notification/dialog-notification.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UiKitComponent
+    UiKitComponent,
+    DialogNotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -28,15 +34,20 @@ import { UiKitComponent } from './ui-kit/ui-kit.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
   ],
   providers: [
     {
       provide: Http,
       useFactory: httpFactory,
-      deps: [XHRBackend, RequestOptions, Router, Globals]
-    }
+      deps: [XHRBackend, RequestOptions, Router, Globals, DialogNotificationService]
+    },
+    DialogNotificationService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogNotificationComponent
+  ]
 })
 export class AppModule { }

@@ -5,39 +5,42 @@ import { environment } from "./../environments/environment";
 import { Router } from '@angular/router';
 import { Globals } from './app.globals';
 
+import { DialogNotificationService } from './components/dialog-notification/dialog-notification.service';
+
 @Injectable()
 export class InterceptedHttp extends Http {
     constructor(
         backend: ConnectionBackend, 
         defaultOptions: RequestOptions, 
         private router: Router,
-        private globals: Globals) {
+        private globals: Globals,
+        public dialogNotification: DialogNotificationService) {
             super(backend, defaultOptions);
     }
 
     public get(url: string, options?: RequestOptionsArgs): Observable<Response> {
-    return this.getUrl(url)
-    .flatMap(urlCompleta => this.intercept(super.get(urlCompleta, this.getRequestOptionArgs(options))))
+        return this.getUrl(url)
+            .flatMap(urlCompleta => this.intercept(super.get(urlCompleta, this.getRequestOptionArgs(options))))
     }
 
     public post(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
-    return this.getUrl(url)
-    .flatMap(urlCompleta => this.intercept(super.post(urlCompleta, body, this.getRequestOptionArgs(options))))
+        return this.getUrl(url)
+            .flatMap(urlCompleta => this.intercept(super.post(urlCompleta, body, this.getRequestOptionArgs(options))))
     }
 
     public put(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
-    return this.getUrl(url)
-    .flatMap(urlCompleta => this.intercept(super.put(urlCompleta, body, this.getRequestOptionArgs(options))))
+        return this.getUrl(url)
+            .flatMap(urlCompleta => this.intercept(super.put(urlCompleta, body, this.getRequestOptionArgs(options))))
     }
 
     public patch(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
-    return this.getUrl(url)
-    .flatMap(urlCompleta => this.intercept(super.patch(urlCompleta, body, this.getRequestOptionArgs(options))))
+        return this.getUrl(url)
+            .flatMap(urlCompleta => this.intercept(super.patch(urlCompleta, body, this.getRequestOptionArgs(options))))
     }
 
     public delete(url: string, options?: RequestOptionsArgs): Observable<Response> {
-    return this.getUrl(url)
-    .flatMap(urlCompleta => this.intercept(super.delete(urlCompleta, this.getRequestOptionArgs(options))))
+        return this.getUrl(url)
+            .flatMap(urlCompleta => this.intercept(super.delete(urlCompleta, this.getRequestOptionArgs(options))))
     }
 
     private getUrl(url: string): Observable<string> {
@@ -101,21 +104,21 @@ export class InterceptedHttp extends Http {
                 erros.push(msg);
             };
 
-            // this.notifyService.showMultipleWarn('Atenção', erros);
+            // this.dialogNotification.showMultipleWarn('Atenção', erros);
             break;
         case 401:
             // this.router.navigate(['./login/']);
             break;
         case 404:
-            // this.notifyService.showWarning('Atenção', 'O recurso requisitado não existe.');
+            // this.dialogNotification.showWarning('Atenção', 'O recurso requisitado não existe.');
             break;
         case 406:
         case 409:
         case 500:
-            // this.notifyService.showError('Ocorreu um erro inesperado.');
+            // this.dialogNotification.showError('Ocorreu um erro inesperado.');
             break;
         default:
-            // this.notifyService.showError('Ocorreu um erro inesperado.');
+            // this.dialogNotification.showError('Ocorreu um erro inesperado.');
             break;
         }
 
