@@ -38,6 +38,12 @@ this.dialogNotification.alert('Teste', 'Mensagem de teste.');
 this.dialogNotification.warnings('Teste', ['Mensagem de teste 1', 'Mensagem de teste 2', 'Mensagem de teste 3']);
 ```
 
+* Alertas confirmação
+
+```shell
+this.dialogNotification.confirm('Confirmação', 'Mensagem de teste.');
+```
+
 * Getting Started
 
 ```shell
@@ -57,50 +63,18 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Alerta simples
-    this.dialogNotification.alert('Teste', 'Mensagem de teste.');
-
-    // Alertas com arrays de mensagens
-    this.dialogNotification.warnings('Teste', ['Mensagem de teste 1', 'Mensagem de teste 2', 'Mensagem de teste 3']);
-  }
-}
-```
-
-## Dialog Confirm
-
-Exemplo de confirmação.
-
-```shell
-import { DialogConfirmService } from './../../components/dialog-confirm/dialog-confirm.service';
-```
-
-* Alerta simples
-
-```shell
-this.dialogConfirm.confirm('Atenção', 'Mensagem de teste.');
-```
-
-* Getting Started
-
-```shell
-import { Component, OnInit } from '@angular/core';
-import { DialogConfirmService } from './../../components/dialog-confirm/dialog-confirm.service';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent implements OnInit {
-  constructor(
-    public dialogConfirm: DialogConfirmService
-  ){
-
   }
 
-  ngOnInit() {
-    // Alerta de confirmação
-    this.dialogConfirm.confirm('Atenção', 'Mensagem de teste.');
+  public alerta(){
+    this.dialogNotification.alert('Alerta', 'Mensagem de teste.');
+  }
+
+  public warnings(){
+    this.dialogNotification.warnings('Alertas', ['Mensagem de teste 1.', 'Mensagem de teste 2.', 'Mensagem de teste 3.']);
+  }
+
+  public confirmar(){
+    this.dialogNotification.confirm('Confirmação', 'Mensagem de teste.');
   }
 }
 ```
