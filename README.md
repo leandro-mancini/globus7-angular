@@ -20,8 +20,7 @@ npm install globus7-angular --save
 
 ## Dialog Notification
 
-Exemplo de notificações com `globus7-angular`.
-Primeiro faz um `import` no seu projeto e em seguida injeta no `constructor`.
+Exemplo de notificações.
 
 ```shell
 import { DialogNotificationService } from './components/dialog-notification/dialog-notification.service';
@@ -67,7 +66,44 @@ export class AppComponent implements OnInit {
 }
 ```
 
+## Dialog Confirm
 
+Exemplo de confirmação.
+
+```shell
+import { DialogConfirmService } from './../../components/dialog-confirm/dialog-confirm.service';
+```
+
+* Alerta simples
+
+```shell
+this.dialogConfirm.confirm('Atenção', 'Mensagem de teste.');
+```
+
+* Getting Started
+
+```shell
+import { Component, OnInit } from '@angular/core';
+import { DialogConfirmService } from './../../components/dialog-confirm/dialog-confirm.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  constructor(
+    public dialogConfirm: DialogConfirmService
+  ){
+
+  }
+
+  ngOnInit() {
+    // Alerta de confirmação
+    this.dialogConfirm.confirm('Atenção', 'Mensagem de teste.');
+  }
+}
+```
 
 ## Servidor de desenvolvimento
 
