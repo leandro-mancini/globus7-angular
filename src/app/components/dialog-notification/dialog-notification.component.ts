@@ -7,9 +7,10 @@ import {DOCUMENT} from '@angular/platform-browser';
     templateUrl: './dialog-notification.component.html',
     styleUrls: ['./dialog-notification.component.scss']
 })
-export class DialogNotificationComponent implements OnInit {
+export class DialogNotificationComponent {
     public title: string;
     public message: string;
+    public actions: boolean;
 
     constructor(
         public dialogRef: MatDialogRef<DialogNotificationComponent>,
@@ -24,9 +25,6 @@ export class DialogNotificationComponent implements OnInit {
             dialog.afterAllClosed.subscribe(() => {
                 doc.body.classList.remove('dialog-open');
             });
-    }
-
-    ngOnInit() {
     }
 
 }

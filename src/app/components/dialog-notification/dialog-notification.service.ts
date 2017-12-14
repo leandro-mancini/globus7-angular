@@ -17,6 +17,7 @@ export class DialogNotificationService {
 
         dialogRef.componentInstance.title = title;
         dialogRef.componentInstance.message = message;
+        dialogRef.componentInstance.actions = false;
 
         return dialogRef.afterClosed();
     }
@@ -31,7 +32,22 @@ export class DialogNotificationService {
 
         dialogRef.componentInstance.title = title;
         dialogRef.componentInstance.message = msg;
+        dialogRef.componentInstance.actions = false;
     
+        return dialogRef.afterClosed();
+    }
+
+    public confirm(title: string, message: string): Observable<boolean>{
+        let dialogRef: MatDialogRef<DialogNotificationComponent>;
+
+        dialogRef = this.dialog.open(DialogNotificationComponent, {
+            width: '380px'
+        });
+        
+        dialogRef.componentInstance.title = title;
+        dialogRef.componentInstance.message = message;
+        dialogRef.componentInstance.actions = true;
+
         return dialogRef.afterClosed();
     }
 }

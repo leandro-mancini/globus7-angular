@@ -20,15 +20,12 @@ import { UiKitComponent } from './pages/ui-kit/ui-kit.component';
 
 import { DialogNotificationComponent } from './components/dialog-notification/dialog-notification.component';
 import { DialogNotificationService } from './components/dialog-notification/dialog-notification.service';
-import { DialogConfirmComponent } from './components/dialog-confirm/dialog-confirm.component';
-import { DialogConfirmService } from './components/dialog-confirm/dialog-confirm.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     UiKitComponent,
-    DialogNotificationComponent,
-    DialogConfirmComponent
+    DialogNotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -46,13 +43,11 @@ import { DialogConfirmService } from './components/dialog-confirm/dialog-confirm
       useFactory: httpFactory,
       deps: [XHRBackend, RequestOptions, Router, Globals, DialogNotificationService]
     },
-    DialogNotificationService,
-    DialogConfirmService
+    DialogNotificationService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    DialogNotificationComponent,
-    DialogConfirmComponent
+    DialogNotificationComponent
   ]
 })
 export class AppModule { }

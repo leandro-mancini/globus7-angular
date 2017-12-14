@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogNotificationService } from './../../components/dialog-notification/dialog-notification.service';
-import { DialogConfirmService } from './../../components/dialog-confirm/dialog-confirm.service';
 
 @Component({
   selector: 'app-ui-kit',
@@ -10,8 +9,7 @@ import { DialogConfirmService } from './../../components/dialog-confirm/dialog-c
 export class UiKitComponent implements OnInit {
 
   constructor(
-    public dialogNotification: DialogNotificationService,
-    public dialogConfirm: DialogConfirmService
+    public dialogNotification: DialogNotificationService
   ) { }
 
   ngOnInit() {
@@ -21,8 +19,12 @@ export class UiKitComponent implements OnInit {
     this.dialogNotification.alert('Alerta', 'Mensagem de teste.');
   }
 
+  public warnings(){
+    this.dialogNotification.warnings('Alertas', ['Mensagem de teste 1.', 'Mensagem de teste 2.', 'Mensagem de teste 3.']);
+  }
+
   public confirmar(){
-    this.dialogConfirm.confirm('Confirmação', 'Mensagem de teste.');
+    this.dialogNotification.confirm('Confirmação', 'Mensagem de teste.');
   }
 
 }

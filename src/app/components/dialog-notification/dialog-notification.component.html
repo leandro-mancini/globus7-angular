@@ -6,3 +6,8 @@
         </div>
     </div>
 </div>
+
+<div md-dialog-actions *ngIf="actions">
+    <button mat-button [mat-dialog-close]="true">Sim</button>
+    <button mat-button [mat-dialog-close]>Não</button>
+</div>
