@@ -22,7 +22,7 @@ export class UiKitComponent implements OnInit {
   }
 
   public confirmar(){
-    this.dialogConfirm.confirm('Atenção', 'Mensagem de teste.');
+    this.dialogConfirm.confirm('Confirmação', 'Mensagem de teste.');
   }
 
 }
