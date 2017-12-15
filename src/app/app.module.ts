@@ -8,7 +8,8 @@ import {
   MatToolbarModule,
   MatIconModule,
   MatSidenavModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSnackBarModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -20,12 +21,15 @@ import { UiKitComponent } from './pages/ui-kit/ui-kit.component';
 
 import { DialogNotificationComponent } from './components/dialog-notification/dialog-notification.component';
 import { DialogNotificationService } from './components/dialog-notification/dialog-notification.service';
+import { SnackBarToastComponent } from './components/snack-bar-toast/snack-bar-toast.component';
+import { SnackBarToastService } from './components/snack-bar-toast/snack-bar-toast.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     UiKitComponent,
-    DialogNotificationComponent
+    DialogNotificationComponent,
+    SnackBarToastComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import { DialogNotificationService } from './components/dialog-notification/dial
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [
     {
@@ -43,11 +48,13 @@ import { DialogNotificationService } from './components/dialog-notification/dial
       useFactory: httpFactory,
       deps: [XHRBackend, RequestOptions, Router, Globals, DialogNotificationService]
     },
-    DialogNotificationService
+    DialogNotificationService,
+    SnackBarToastService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    DialogNotificationComponent
+    DialogNotificationComponent,
+    SnackBarToastComponent
   ]
 })
 export class AppModule { }
