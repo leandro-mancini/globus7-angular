@@ -1,28 +1,17 @@
-<mat-sidenav-container>
-    <mat-sidenav #sidenav>
-        Menu aqui
-    </mat-sidenav>
+<mat-toolbar color="primary" class="bg-cor-azul">
+    <mat-toolbar-row>
+        <span>Ui Kit</span>
+        <span class="example-spacer"></span>
+        <button mat-button [routerLink]="['Styleguide']">Styleguide</button>
+        <button mat-button [routerLink]="['Components']">Components</button>
+    </mat-toolbar-row>
+</mat-toolbar>
 
-    <mat-sidenav-content>
-        <mat-toolbar color="primary">
-            <mat-toolbar-row>
-                <span>Ui Kit</span>
-                <span class="example-spacer"></span>
-                <button mat-icon-button (click)="sidenav.toggle()" aria-hidden="true">
-                    <mat-icon>menu</mat-icon>
-                </button>
-            </mat-toolbar-row>
-        </mat-toolbar>
+<section>
+    <div class="container">
+        <h3>Introdução</h3>
+        <p>Olá! Bem-vindo ao <strong>Ui Kit</strong>, uma ferramenta para tornar a criação e manutenção de modelos simples</p>
+    </div>
+</section>
 
-        <div class="container">
-            <h3>Dialog notification</h3>
-            <button mat-button (click)="alerta()">Alerta!</button>
-            <button mat-button (click)="warnings()">Warnings!</button>
-            <button mat-button (click)="confirmar()">Confirmar!</button>
-        </div>
-        <div class="container">
-            <h3>Toast notification</h3>
-            <button mat-button (click)="toastAlerta()">Toast alerta!</button>
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<router-outlet></router-outlet>
